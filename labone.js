@@ -8,3 +8,16 @@ if (userInput === "yes"){
 else {
   console.log("Bye!")
 }
+
+var userName  = prompt ("name")
+var enemyName = "Almighty Grant"
+var userHealth = "40"
+var enemyHealth= "10"
+var wins= "0"
+
+while(userHealth >0 && wins <3)
+  {if(enemyHealth <=0);}
+  {  wins++
+  enemyHealth = 10; 
+}
+{Math.floor((Math.random() * 2) + 1);}
