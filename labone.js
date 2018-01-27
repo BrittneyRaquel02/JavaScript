@@ -21,3 +21,4 @@ while(userHealth >0 && wins <3)
   enemyHealth = 10; 
 }
 {Math.floor((Math.random() * 2) + 1);}
+//repl.it is giving an error for an infinite loop? I cannot seem to figure out why
