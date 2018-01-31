@@ -15,8 +15,8 @@ if (game.toLowerCase() === "yes"){
 while(userHealth >0 && wins <3){
     userHealth -= Math.floor(Math.random()*2)+1;
     enemyHealth -= Math.floor(Math.random()*2)+1;
-    console.log(`$(userName) has $(userHealth) health left`);
-    console.log(`Almighty Grant has $(enemyHealth) health left`);
+    console.log(`${userName} has ${userHealth} health left`);
+    console.log(`Almighty Grant has ${enemyHealth} health left`);
      if (enemyHealth <=0){
     wins = wins++;
     enemyHealth = 10;
@@ -30,5 +30,6 @@ console.log("You won!");
 if(userHealth === "0");{
   console.log("You lose!");
 }
+
 
 //this is the one we did in class.  will be using this as it is the math.floor function
