@@ -1,0 +1,34 @@
+var game = prompt ("Do you want to play a game?");
+var userName  = prompt ("What is your username?");
+var enemyName = "Almighty Grant";
+var userHealth = "40";
+var enemyHealth = "10";
+var wins = "0";
+
+if (game.toLowerCase() === "yes"){
+  console.log("What is your name?");
+}
+    else {
+  console.log("Bye!");
+}
+
+while(userHealth >0 && wins <3){
+    userHealth -= Math.floor(Math.random()*2)+1;
+    enemyHealth -= Math.floor(Math.random()*2)+1;
+    console.log(`$(userName) has $(userHealth) health left`);
+    console.log(`Almighty Grant has $(enemyHealth) health left`);
+     if (enemyHealth <=0){
+    wins = wins++;
+    enemyHealth = 10;
+     }
+}
+
+    
+if(enemyHealth === "0" && wins === "3"){
+console.log("You won!");
+}
+if(userHealth === "0");{
+  console.log("You lose!");
+}
+
+//this is the one we did in class.  will be using this as it is the math.floor function
