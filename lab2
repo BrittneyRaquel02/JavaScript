@@ -8,11 +8,15 @@ function startGame(){
 var game = prompt("Do you want to play a game");
 if (game ==="yes"){
 var userName = prompt("What is your name?");
-startCombat(userName)
+startCombat(userName);
   }
 }
 function startCombat(userName){
-
+var quit = prompt("Do you want to quit?");
+if (quit === "yes")
+console.log("Bye!");
+var attack = prompt("Do you want to attack?");
+if (attack === "yes")
 
 while(userHealth >0 && wins <3){
   userHealth -= getDamage()
