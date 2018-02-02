@@ -3,7 +3,48 @@ var userHealth = "40";
 var enemyHealth = "10";
 var wins = "0";
 
+startGame()var enemyName = "Almighty Grant";
+var userHealth = "40";
+var enemyHealth = "10";
+var wins = "0";
+
 startGame()
+function startGame(){
+var game = prompt("Do you want to play a game");
+if (game ==="yes"){
+var userName = prompt("What is your name?");
+startCombat(userName);
+  }
+}
+function startCombat(userName){
+while(userHealth >0 && wins <3){
+  var response = prompt("Would you like to attack or quit?");
+  if (response.toLowerCase() === "quit"){
+    console.log("You decided to end the game");
+    return;
+  }
+  if(response.toLowerCase()=== 'attack'){
+  userHealth -= getDamage()
+  enemyHealth -= getDamage()
+    console.log(`${userName} has ${userHealth} health left`);
+    console.log(`Almighty Grant has ${enemyHealth} health left`);
+  }
+   if (enemyHealth <=0){
+    wins++;
+    enemyHealth = 10;
+   }
+  }
+  
+  if(wins === 3){
+console.log("You won!");
+}else {
+  console.log("You lose!");
+}
+}
+function getDamage(){
+    return Math.floor(Math.random()*5)+1;
+}
+    
 function startGame(){
 var game = prompt("Do you want to play a game");
 if (game ==="yes"){
