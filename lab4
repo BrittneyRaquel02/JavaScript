@@ -1,0 +1,105 @@
+
+var grant = {
+  health:10,
+  name: 'Grant',
+  generateAttackDamage(){
+    return getRandomInt(1,5);
+  }
+};
+
+var user = {
+  health: 40,
+  name: null,
+  healsRemaining: 2,
+  wins: 0,
+  generateAttackDamage(){
+    return getRandomInt(1,3);
+  },
+};
+
+
+var enemyName = "Almighty Grant";
+var userHealth = "40";
+var enemyHealth = "10";
+var wins = "0";
+
+
+
+var startButton = document.getElementById('START');
+var attackButton = document.getElementById('ATTACK');
+var healButton = document.getElementById('HEAL');
+var quitButton = document.getElementById('QUIT');
+var input = document.getElementById('click');
+var userProgress = document.getElementById('my-progress');
+var enemyProgress = document.getElementById('enemy-progress');
+
+  startButton.addEventListener('click', function(){
+  this.setAttribute('class', 'hidden');
+  attackButton.setAttribute('class', '');
+  healButton.setAttribute('class', '');
+  quitButton.setAttribute('class', '');
+  userProgress.setAttribute('class', '');
+  enemyProgress.setAttribute('class', '');
+  var userName = prompt("What is your name?");
+  });
+
+quitButton.addEventListener ('click', function(){
+  document.write("You chose to end the game!");
+});
+
+//QUIT BUTTON ACTUALLY WORKS!
+
+attackButton.addEventListener ('click', function(){
+  user.health -= grant.generateAttackDamage();
+  grant.health -= user.generateAttackDamage();
+    document.write(`${userName} has ${user.health} health left`);
+    document.write(`Almighty Grant has ${grant.health} health left`);
+      if (grant.health <=0){
+    user.wins++;
+    grant.health = 10;
+   }
+  });
+
+  healButton.addEventListener ("click", healLives());
+
+
+  function move(generateAttackDamage) {
+    var elem = document.getElementById("my-progress", "enemy-progress");
+    var healLives= document.getElementById('health');
+    var width = 100;
+    var id = setInterval(frame, 10);
+    button.addEventListener('click', function(){
+      heath--;
+    });
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++;
+            elem.style.width = width + '%';
+            elem.innerHTML = width * 1 + '%';
+        }
+    }
+}
+
+//everything after this line needs kept
+
+  if(user.wins === 5){
+console.log("You won!");
+}
+else {
+  console.log("You lose!");
+}
+
+function healLives(){
+    this.health += getRandomInt(1,10);
+    this.healsRemaining--;
+  }
+
+function getDamage(){
+    return Math.floor(Math.random()*5)+1;
+}
+
+function getRandomInt(min, max){
+    return Math.floor(Math.random()*max)+min;
+}
